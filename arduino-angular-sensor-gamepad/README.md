@@ -1,5 +1,7 @@
 # Arduino Leonardo as Gamepad
 
+Sending data from AN8 Angular Sensor to PC
+
 [ArduinoXInput](https://github.com/dmadison/ArduinoXInput)
 [ArduinoXInput_AVR](https://github.com/dmadison/ArduinoXInput_AVR)
 
