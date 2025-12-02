@@ -1,9 +1,8 @@
 /*
-  Serial Call and Response in ASCII
+  Serial message turns on the board internal LED
   Language: Wiring/Arduino
 */
 
-int relayDigitalID = 4;
 int arduinoLEDDigitalID = 13;
 
 void setup() {
@@ -17,22 +16,16 @@ void setup() {
 
   // LED
   pinMode(arduinoLEDDigitalID, OUTPUT);
-
-  // RELAIS
-  // pinMode(relayDigitalID, OUTPUT);
 }
 
-void toggleRelay(int duration) {
+void toggleLED(int duration) {
   
-  // Met sous tension le relais (l'aimant est désactivé)
   // Allume la LED
-  // digitalWrite(relayDigitalID, HIGH);
   digitalWrite(arduinoLEDDigitalID, HIGH);   
   
   delay (duration);
-  
-  // Annule tension du relais (l'aimant est réactivé)
-  // digitalWrite(relayDigitalID, LOW);
+
+  // Eteint la LED  
   digitalWrite(arduinoLEDDigitalID, LOW);
 }
 
@@ -42,10 +35,10 @@ void loop() {
     // PC => ARDUINO
     char data = Serial.read();
     if (data == 'A') {
-      toggleRelay(1000);
+      toggleLED(1000);
     } else {
       int slotNo = data - '0';
-      toggleRelay(slotNo * 200);
+      toggleLED(slotNo * 200);
     }
   }
   
