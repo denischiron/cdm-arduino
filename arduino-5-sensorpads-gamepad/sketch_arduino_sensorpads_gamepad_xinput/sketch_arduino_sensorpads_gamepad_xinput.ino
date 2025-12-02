@@ -7,11 +7,11 @@
 #include <XInput.h>
 #include "Sensor.h"
 
-Sensor sensorA1(1, BUTTON_Y);
-Sensor sensorA2(2, BUTTON_B);
-Sensor sensorA3(3, BUTTON_A);
-Sensor sensorA4(4, BUTTON_X);
-Sensor sensorA5(5, DPAD_UP);
+Sensor sensorA1(A1, BUTTON_Y);
+Sensor sensorA2(A2, BUTTON_B);
+Sensor sensorA3(A3, BUTTON_A);
+Sensor sensorA4(A4, BUTTON_X);
+Sensor sensorA5(A5, DPAD_UP);
 
 
 void setup() {
