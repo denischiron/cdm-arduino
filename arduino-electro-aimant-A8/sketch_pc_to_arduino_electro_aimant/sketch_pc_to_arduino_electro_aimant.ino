@@ -7,7 +7,7 @@
 
 int firstRelayDigitalID = 2;
 int arduinoLEDDigitalID = 13;
-int onOffDelay = 1000;
+int onOffDelay = 100;
 
 
 void setup() {
@@ -43,23 +43,50 @@ void loop() {
     // PC => ARDUINO
     char data = Serial.read();
 
-    // Reçoit le caractère "A" : on désactive tous les aimants
-    if (data == 'A') {
-      
-      // Met sous tension les relais (l'aimant est désactivé)
+    // Reçoit le caractère "B" : on désactive tous les aimants
+    if (data == 'B') {
+
       toggleRelay(firstRelayDigitalID, HIGH);
       toggleRelay(firstRelayDigitalID + 1, HIGH);
       toggleRelay(firstRelayDigitalID + 2, HIGH);
       toggleRelay(firstRelayDigitalID + 3, HIGH);
       toggleRelay(firstRelayDigitalID + 4, HIGH);
-
       delay(onOffDelay);
-
-      // Annule tension du relais (l'aimant est réactivé)
       toggleRelay(firstRelayDigitalID, LOW);
       toggleRelay(firstRelayDigitalID + 1, LOW);
       toggleRelay(firstRelayDigitalID + 2, LOW);
       toggleRelay(firstRelayDigitalID + 3, LOW);
+      toggleRelay(firstRelayDigitalID + 4, LOW);
+
+    } else  if (data == 'A') {
+
+     // Reçoit le caractère "B" : on désactive tous les aimants en cascade, l'un après l'autre
+      toggleRelay(firstRelayDigitalID, HIGH);
+      delay(onOffDelay);
+      toggleRelay(firstRelayDigitalID, LOW);
+
+      delay(onOffDelay);
+
+      toggleRelay(firstRelayDigitalID + 1, HIGH);
+      delay(onOffDelay);
+      toggleRelay(firstRelayDigitalID + 1, LOW);
+
+      delay(onOffDelay);
+
+      toggleRelay(firstRelayDigitalID + 2, HIGH);
+      delay(onOffDelay);
+      toggleRelay(firstRelayDigitalID + 2, LOW);
+
+      delay(onOffDelay);
+
+      toggleRelay(firstRelayDigitalID + 3, HIGH);
+      delay(onOffDelay);
+      toggleRelay(firstRelayDigitalID + 3, LOW);
+
+      delay(onOffDelay);
+
+      toggleRelay(firstRelayDigitalID + 4, HIGH);
+      delay(onOffDelay);
       toggleRelay(firstRelayDigitalID + 4, LOW);
 
     } else {
