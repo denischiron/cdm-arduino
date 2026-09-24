@@ -8,18 +8,18 @@
 #include "Sensor.h"
 
 /*
-Sensor sensor1(2, BUTTON_Y);
-Sensor sensor2(3, BUTTON_Y);
-Sensor sensor3(4, BUTTON_Y);
-Sensor sensor4(5, BUTTON_Y);
-Sensor sensor5(6, BUTTON_Y);
+Sensor sensor1(3, BUTTON_Y);
+Sensor sensor2(4, BUTTON_Y);
+Sensor sensor3(5, BUTTON_Y);
+Sensor sensor4(6, BUTTON_Y);
+Sensor sensor5(7, BUTTON_Y);
 */
 
-Sensor sensor1(2, BUTTON_Y);
-Sensor sensor2(3, BUTTON_B);
-Sensor sensor3(4, BUTTON_A);
-Sensor sensor4(5, BUTTON_X);
-Sensor sensor5(6, DPAD_UP);
+Sensor sensor1(3, BUTTON_Y);
+Sensor sensor2(4, BUTTON_B);
+Sensor sensor3(5, BUTTON_A);
+Sensor sensor4(6, BUTTON_X);
+Sensor sensor5(7, DPAD_UP);
 
 
 void setup() {
